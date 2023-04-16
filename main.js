@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded',()=>{
                     let keyInp = document.getElementById('SubscriptionKey');
                     if( afmInp != null && keyInp != null ){
                         afmInp.value = cred.afm;
-                        keyInp = cred.key;
+                        keyInp.value = cred.key;
                     }
                 }
             });
