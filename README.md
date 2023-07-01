@@ -1,6 +1,6 @@
 # aade-mydata-login
 javascript code for auto login to https://mydata.aade.gr
-Version: 1.0.0
+Version: 2.0.0
 Author: Lefteris Saroukos
 Author URL: https://lsaroukos.gr
 
@@ -11,23 +11,23 @@ Author URL: https://lsaroukos.gr
 ## 2. Οδηγίες
 Σε αυτήν την πρώτη του έκδωση, ο κώδικας μπορεί να φορτωθεί μέσω κάποιου τρίτου plugin, όπως το "Custom Style Script" (Δείτε παρακάτω τις σχετικές υποενότητες)
 Βήμα 1: πορσθέτουμε τα δικά μας στοιχεία στον κώδικα.
-Στο παρακάτω σημείο του κώδικα αλλάζουμε τις τιμές eg_username_1, eg_afm_1, egk_key_1 με το όνομα χρήστη μας, αφμ και subscription key μας αντίστοιχα.
+Στο παρακάτω σημείο του κώδικα αλλάζουμε τις τιμές eg_username_1, eg_vatId_1, egk_subKey_1 με το όνομα χρήστη μας, αφμ και subscription key μας αντίστοιχα.
   {
       username : 'eg_username_1',
-      afm : 'eg_afm_1',
-      key : 'eg_key_1'
+      vatId : 'eg_vatId_1',
+      subKey : 'eg_subKey_1'
   },
  Αν επιθυμούμε να συνδέονται περισσότεροι χρήστες από τον υπολογιστή μας, σε μια νέα σειρά μετά από το κόμμα, μπορούμε να προσθέσουμε περισσότερα στοιχεία σύνδεσης:
  π.χ.
  {
       username : 'eg_username_1',
-      afm : 'eg_afm_1',
-      key : 'eg_key_1'
+      vatId : 'eg_vatId_1',
+      subKey : 'eg_subKey_1'
   },
   {
       username : 'eg_username_2',
-      afm : 'eg_afm_2',
-      key : 'eg_key_2'
+      vatId : 'eg_vatId_2',
+      subKey : 'eg_subKey_2'
   },
 Έπειτα, φορτώνουμε τον κώδικα στο plugin και αφού πληκτρολογήσουμε το όνομα χρήστη μας στο πεδίο username, θα πρέπει να δούμε τα υπόλοιπα πεδία (ΑΦΜ, Subscription Key) να συμπληρώνονται αυτόματα
 
@@ -40,3 +40,7 @@ https://chrome.google.com/webstore/detail/custom-style-script/ecjfaoeopefafjpdgn
 ### 2.3 Edge
 https://microsoftedge.microsoft.com/addons/detail/custom-style-script/eocdolakkgkbmnfojgicnicdnmimfhoo?hl=en
 
+
+## Version Release
+### V2
+ - υποστήριξη αναζήτησης με βάση οποιοδήποτε πεδίο (όνομα χρήστη, αφμ, subscription key)

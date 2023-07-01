@@ -1,31 +1,49 @@
 //after the page Elements have loaded
 document.addEventListener('DOMContentLoaded',()=>{
-    var usernameInp = document.getElementById('UserName');
-    if( usernameInp != null ){
     const creds = [
         {
             username : 'eg_username_1',
-            afm : 'eg_afm_1',
-            key : 'eg_key_1'
+            vatId : 'eg_vatId_1',
+            subKey : 'eg_subKey_1'
         },
         {
             username : 'eg_username_2',
-            afm : 'eg_afm_2',
-            key : 'eg_key_2'
+            vatId : 'eg_vatId_2',
+            subKey : 'eg_subKey_2'
         },
     ];
+    
+    //define input fields DOM element ids
+    const fields = {
+        username: 'UserName',
+        vatId : 'VatNumber',
+        subKey: 'SubscriptionKey'
+        
+    };
 
-        usernameInp.addEventListener('keyup',()=>{
-            creds.forEach( cred=>{
-                if( usernameInp.value === cred.username ){
-                    let afmInp = document.getElementById('VatNumber');
-                    let keyInp = document.getElementById('SubscriptionKey');
-                    if( afmInp != null && keyInp != null ){
-                        afmInp.value = cred.afm;
-                        keyInp.value = cred.key;
+    function addListener( inp, inpField ){
+        if( inp != null ){
+            inp.addEventListener('keyup', ()=>matchInput(inp, inpField) );
+        }
+    }
+    
+    function matchInput( inp, inpField ){
+        creds.forEach( cred=>{
+            //complete other fields if a is match found
+            if( inp.value === cred[inpField] ){
+                Object.keys(fields).forEach( key=>{
+                    if( key!==inpField ){
+                        let elementInp = document.getElementById(fields[key]);
+                        if( elementInp !== null ){
+                            elementInp.value = cred[key];
+                        }
                     }
-                }
-            });
+                } );
+            }
         });
     }
+
+    addListener(document.getElementById( fields.username ), 'username');
+    addListener(document.getElementById( fields.vatId ), 'vatId');
+    addListener(document.getElementById( fields.subKey ), 'subKey');
 });
